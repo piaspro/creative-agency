@@ -1,0 +1,15 @@
+.service-info{
+    border-radius: 5px;
+    box-shadow: 1px 5px 10px gray;
+    cursor: pointer;
+    margin-top: 50px;
+}
+.service-info h5{
+    font-weight: bold;
+}
+.text-color{
+    color: rgb(122, 178, 89);
+}
+.services-title h2{
+    font-weight: bold;
+}

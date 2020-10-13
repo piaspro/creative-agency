@@ -1,0 +1,28 @@
+.logIn{
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    padding: 100px;
+}
+.signIn{
+    border: 1px solid black;
+    border-radius: 25px;
+    text-align: center;
+    padding: 5px 20px;
+    margin-top: 20px;
+    background-color: white;
+}
+.icon{
+    height: 25px;
+}
+.img{
+    text-align: center;
+    margin: 20px;
+}
+.logIn h6{
+    color: black;
+    margin-top: 10px;
+}
+.warning{
+    color:red;
+}
