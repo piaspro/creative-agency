@@ -10,13 +10,13 @@ const ServiceList = () => {
     const [loggedInUser, SetLoggedInUser] = useContext(userContext);
     const [service, setService] = useState([]);
     console.log(service);
-    // Display all Services
+    // Display all Servicelist
     useEffect(() => {
-        fetch('http://localhost:5000/getUserServices?email='+loggedInUser.email, {
+        fetch('http://localhost:5000/getUserServices?email=' + loggedInUser.email, {
             method: 'GET',
-            headers: { 
-                'Content-Type' : 'application/json',
-                authorization : `Bearer ${sessionStorage.getItem('token')}`
+            headers: {
+                'Content-Type': 'application/json',
+                authorization: `Bearer ${sessionStorage.getItem('token')}`
             }
         })
             .then(res => res.json())
@@ -34,6 +34,7 @@ const ServiceList = () => {
                     <Sidebar></Sidebar>
                 </Col>
                 <Col md={8}>
+                    <h4>Service List</h4>
                     <Row>
                         {
                             service.map(data => <Col className="m-3 p-3 box">

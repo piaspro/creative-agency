@@ -7,12 +7,12 @@ import Header from '../../Header/Header';
 import Sidebar from '../Sidebar/Sidebar';
 
 
-const Review = () => {
+const AddReview = () => {
     const [loggedInUser, SetLoggedInUser] = useContext(userContext);
     const [clientInfo, setClientInfo] = useState({});
-    const {name, photo} = loggedInUser;
+    const { name, photo } = loggedInUser;
     const handleBlur = e => {
-        const newInfo = { ...clientInfo, name, photo};
+        const newInfo = { ...clientInfo, name, photo };
         newInfo[e.target.name] = e.target.value;
         setClientInfo(newInfo);
     }
@@ -20,18 +20,18 @@ const Review = () => {
     // function to send data to server
     const sendReview = (event) => {
         fetch('http://localhost:5000/addReview', {
-            method:'POST',
-            headers:{'Content-Type': 'application/json'},
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(clientInfo)
         })
-        .then(res => res.json())
-        .then(value => {
-           if (value){
-            history.push("/home");
-           }else{
-               alert("Could Not Add !!")
-           }
-        })
+            .then(res => res.json())
+            .then(value => {
+                if (value) {
+                    history.push("/home");
+                } else {
+                    alert("Could Not Add !!")
+                }
+            })
         event.preventDefault();
     }
 
@@ -39,13 +39,14 @@ const Review = () => {
         <div>
             <Header></Header>
             <Row>
-                <Col>
+                <Col md={4}>
                     <Sidebar></Sidebar>
                 </Col>
-                <Col>
-                    <Form  onSubmit={sendReview}>
+                <Col md={8}>
+                    <h4>Add Review</h4>
+                    <Form onSubmit={sendReview}>
                         <Form.Group controlId="exampleForm.ControlInput1">
-                            <Form.Control onBlur={handleBlur} type="text" name="name" placeholder="Your Name" value={name}/>
+                            <Form.Control onBlur={handleBlur} type="text" name="name" placeholder="Your Name" value={name} />
                         </Form.Group>
                         <Form.Group controlId="exampleForm.ControlInput1">
                             <Form.Control onBlur={handleBlur} type="text" name="position" placeholder="Your Company" />
@@ -61,4 +62,4 @@ const Review = () => {
     );
 };
 
-export default Review;
+export default AddReview;

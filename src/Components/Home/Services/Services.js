@@ -8,14 +8,15 @@ import './Service.css'
 const Services = () => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
     const [services, setServices] = useState([]);
+    console.log(services)
     // Display all Services
     useEffect(() => {
         fetch('http://localhost:5000/getServices')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
-    const handleInfo = (service) => {
-        setLoggedInUser(service)
+    const handleInfo = (data) => {
+        setLoggedInUser(data)
     }
 
 
@@ -27,14 +28,14 @@ const Services = () => {
             <div className="mt-3">
                 <Row>
                     {
-                        services.map(service => <Col>
+                        services.map(data => <Col>
                             <div className="p-3 service-info">
                                 <div className="text-center">
-                                    <Link to="/customer" onClick={() => handleInfo(service)}><img alt="" src={service.img} height="80" className="d-inline-block align-top" /></Link>
+                                    <Link to="/dashboard" onClick={() => handleInfo(data)}><img height={120} className="p-3 mr-1" src={`data:image/png;base64,${data.image.img}`} alt="..." /></Link>
                                 </div>
                                 <div className="text-center p-3">
-                                    <h5>{service.title}</h5>
-                                    <p>{service.description}</p>
+                                    <h5>{data.title}</h5>
+                                    <p>{data.description}</p>
                                 </div>
                             </div>
                         </Col>)

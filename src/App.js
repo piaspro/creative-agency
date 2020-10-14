@@ -5,15 +5,16 @@ import {
   Route
 } from "react-router-dom";
 import './App.css';
-import Admin from './Components/Admin/Admin';
-import AdminService from './Components/Admin/AdminService/AdminService';
-import MakeAdmin from './Components/Admin/MakeAdmin/MakeAdmin';
-import CustomerSection from './Components/CustomerSection/CustomerSection';
-import Review from './Components/CustomerSection/Review/Review';
+import AdminServiceList from './Components/Dashboard/AdminServiceList/AdminServiceList';
+import AddService from './Components/Dashboard/AddService/AddService';
+import MakeAdmin from './Components/Dashboard/MakeAdmin/MakeAdmin';
+import Dashboard from './Components/Dashboard/Dashboard';
+import AddReview from './Components/Dashboard/AddReview/AddReview';
 import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
-import ServiceList from './Components/CustomerSection/ServiceList/ServiceList';
+import ServiceList from './Components/Dashboard/ServiceList/ServiceList';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import Order from './Components/Dashboard/Order/Order';
 
 // export data
 export const userContext = createContext();
@@ -27,20 +28,23 @@ function App() {
         <Route path="/home">
           <Home/>
         </Route>
-        <PrivateRoute path="/customer">
-          <CustomerSection/>
+        <PrivateRoute path="/dashboard">
+          <Dashboard/>
         </PrivateRoute>
+        <Route path="/order">
+          <Dashboard/>
+        </Route>
         <Route path="/servicelist">
           <ServiceList/>
         </Route>
         <Route path="/review">
-          <Review/>
+          <AddReview/>
         </Route>
-        <Route path="/admin">
-          <Admin/>
+        <Route path="/adminServiceList">
+          <AdminServiceList/>
         </Route>
-        <Route path="/adminService">
-          <AdminService/>
+        <Route path="/addService">
+          <AddService/>
         </Route>
         <Route path="/makeAdmin">
           <MakeAdmin/>
