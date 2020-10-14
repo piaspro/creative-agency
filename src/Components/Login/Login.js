@@ -7,11 +7,11 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebaseConfig';
 import { userContext } from '../../App';
-import Header from '../Header/Header';
 import { useHistory, useLocation } from 'react-router-dom';
 
 const Login = () => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
+    console.log(loggedInUser)
     const [user, setUser] = useState({
         name: '',
         googleError: ''
@@ -39,6 +39,7 @@ const Login = () => {
                 const userInfo = {...loggedInUser, ...signedInUser}
                 setLoggedInUser(userInfo);
                 setUser(userInfo);
+                storeAuthToken()
                 history.replace(from);
             }).catch((error) => {
                 const newInfo = { ...user }
@@ -46,7 +47,16 @@ const Login = () => {
                 setUser(newInfo);
             });
     }
-
+    // Use of token for authentication
+    const storeAuthToken = () => {
+        firebase.auth().currentUser.getIdToken( true)
+        .then( (idToken) => {
+            sessionStorage.setItem('token', idToken)
+          }).catch( (error) => {
+            // Handle error
+            console.log(error)
+          }); 
+    }
     return (
         <div>
             <div className="img">
