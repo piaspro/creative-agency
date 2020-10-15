@@ -1,5 +1,10 @@
 .back-img{
-    background-color: rgb(251, 207, 96);
+    background-color: #fbcf60;
+    padding-top: 150px;
+    transform: skew(0deg, -5deg) translateY(-150px);
+}
+.element{
+    transform: skew(0deg, 5deg);
 }
 .info-text h1{
     font-weight: bold;

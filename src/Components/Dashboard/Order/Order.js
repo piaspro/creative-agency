@@ -1,9 +1,7 @@
 import React, { useContext, useState } from 'react';
-import Sidebar from '../Sidebar/Sidebar';
 import { Button, Col, Form, Row } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { userContext } from '../../../App';
-import Header from '../../Header/Header';
 
 const Order = () => {
     const [loggedInUser, SetLoggedInUser] = useContext(userContext);

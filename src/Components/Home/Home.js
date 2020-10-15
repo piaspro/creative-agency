@@ -17,7 +17,7 @@ const Home = () => {
     return (
         <div>
             <div className="back-img">
-                <Container>
+                <Container className="element">
                     <Header></Header>
                     <Row className="pb-5 mb-3 ">
                         <Col md={6}>
@@ -34,7 +34,7 @@ const Home = () => {
                 </Container>
             </div>
             <Container>
-                <Row className="d-flex justify-content-center mt-5">
+                <Row className="d-flex justify-content-center">
                     <Col md={2} className="m-2 d-flex justify-content-center">
                         <img alt="" src={img1} height="40" className="d-inline-block" />
                     </Col>

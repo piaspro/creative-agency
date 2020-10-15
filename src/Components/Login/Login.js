@@ -11,7 +11,6 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 const Login = () => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
-    console.log(loggedInUser)
     const [user, setUser] = useState({
         name: '',
         googleError: ''
@@ -36,7 +35,7 @@ const Login = () => {
                     email: email,
                     photo: photoURL
                 };
-                const userInfo = {...loggedInUser, ...signedInUser}
+                const userInfo = { ...loggedInUser, ...signedInUser }
                 setLoggedInUser(userInfo);
                 setUser(userInfo);
                 storeAuthToken()
@@ -49,13 +48,13 @@ const Login = () => {
     }
     // Use of token for authentication
     const storeAuthToken = () => {
-        firebase.auth().currentUser.getIdToken( true)
-        .then( (idToken) => {
-            sessionStorage.setItem('token', idToken)
-          }).catch( (error) => {
-            // Handle error
-            console.log(error)
-          }); 
+        firebase.auth().currentUser.getIdToken(true)
+            .then((idToken) => {
+                sessionStorage.setItem('token', idToken)
+            }).catch((error) => {
+                // Handle error
+                console.log(error)
+            });
     }
     return (
         <div>

@@ -10,7 +10,6 @@ import './Servicelist.css'
 const ServiceList = () => {
     const [loggedInUser, SetLoggedInUser] = useContext(userContext);
     const [service, setService] = useState([]);
-    console.log(service);
     // Display all Servicelist
     useEffect(() => {
         fetch('http://localhost:5000/getUserServices?email=' + loggedInUser.email, {
@@ -41,13 +40,13 @@ const ServiceList = () => {
                             service.length === 0 && <Col className="d-flex justify-content-center"> <div><img src={loading} alt="" /></div> </Col>
                         }
                         {
-                            service.map(data => <Col className="m-3 p-3 box">
+                            service.map(data => <Col  md={12} lg={5} className="m-3 p-3 box">
                                 <Row>
-                                    <Col md={6}>
+                                    <Col>
                                         <img height={100} className="p-3 mr-1" src={`data:image/png;base64,${data.image.img}`} alt="..." />
                                     </Col>
-                                    <Col md={6}>
-                                        <Button className="mr-3 mt-5" variant="success">Done</Button>
+                                    <Col>
+                                        <Button className="mr-3 mt-5" variant="outline-success">{data.project}</Button>
                                     </Col>
                                 </Row>
                                 <Row>

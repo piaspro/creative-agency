@@ -39,7 +39,7 @@ const Header = () => {
                         <Link className="mr-5 text" to="/admin">Our Team</Link>
                         <Link className="mr-5 text" to="/admin">Contact Us</Link>
                         {loggedInUser.isSignedIn ?
-                            <Button  className="px-3 mr-5" variant="danger" onClick={handleSignOut} >Log Out</Button>
+                            <Button className="px-3 mr-5" variant="danger" onClick={handleSignOut} >Log Out</Button>
                             : <Link to="/login"><Button className="px-3 mr-5" variant="dark">Log In</Button></Link>
                         }
                     </Nav>
