@@ -35,9 +35,9 @@ const Header = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto d-flex align-items-center">
                         <Link className="mr-5 text" to="/home">Home</Link>
-                        <Link className="mr-5 text" to="/customer">Our Portfolio</Link>
-                        <Link className="mr-5 text" to="/admin">Our Team</Link>
-                        <Link className="mr-5 text" to="/admin">Contact Us</Link>
+                        <Link className="mr-5 text" to="/dashboard">Our Portfolio</Link>
+                        <Link className="mr-5 text" to="/dashboard">Our Team</Link>
+                        <Link className="mr-5 text" to="/dashboard">Contact Us</Link>
                         {loggedInUser.isSignedIn ?
                             <Button className="px-3 mr-5" variant="danger" onClick={handleSignOut} >Log Out</Button>
                             : <Link to="/login"><Button className="px-3 mr-5" variant="dark">Log In</Button></Link>

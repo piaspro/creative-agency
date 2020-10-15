@@ -5,7 +5,6 @@ import { userContext } from '../../../App';
 import loading from '../../../images/Loading.gif'
 import './Service.css'
 
-
 const Services = () => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
     const [services, setServices] = useState([]);
@@ -18,7 +17,6 @@ const Services = () => {
     const handleInfo = (data) => {
         setLoggedInUser(data)
     }
-
 
     return (
         <div className="m-5">

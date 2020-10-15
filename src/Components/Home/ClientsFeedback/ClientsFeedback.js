@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import loading from '../../../images/Loading.gif'
 
-
-
 const ClientsFeedback = () => {
     const [reviews, setReviews] = useState([]);
     // Display all review

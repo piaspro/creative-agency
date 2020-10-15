@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Dashboard = () => {
     const notify = () => toast.success('🦄 Log in Successful', {
         position: "top-left",
-        autoClose: 5000,
+        autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,

@@ -10,7 +10,7 @@ const Sidebar = () => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
     const [isAdmin, setIsAdmin] = useState(false);
     const [isUser, setIsUser] = useState(false);
-
+    // handle admin
     useEffect(() => {
         fetch('http://localhost:5000/isAdmin', {
             method: 'POST',
@@ -20,7 +20,7 @@ const Sidebar = () => {
             .then(res => res.json())
             .then(data => setIsAdmin(data));
     }, [])
-
+    // handle user
     useEffect(() => {
         fetch('http://localhost:5000/isUser', {
             method: 'POST',
@@ -30,20 +30,21 @@ const Sidebar = () => {
             .then(res => res.json())
             .then(data => setIsUser(data));
     }, [])
+
     return (
-        <Container className="ml-5 mt-5 sidebar">
+        <Container className="ml-5 mt-5">
             {
                 isUser && <div>
-                    <Link to="/order"><FontAwesomeIcon icon={faShoppingCart} /> Order</Link> <br /> <br />
-                    <Link to="/servicelist"><FontAwesomeIcon icon={faLuggageCart} /> Service List</Link> <br /> <br />
-                    <Link to="/review"><FontAwesomeIcon icon={faInbox} /> Review</Link> <br /> <br />
+                    <Link to="/order" className="activeColor"><FontAwesomeIcon icon={faShoppingCart} /> Order</Link> <br /> <br />
+                    <Link to="/servicelist" className="activeColor"><FontAwesomeIcon icon={faLuggageCart} /> Service List</Link> <br /> <br />
+                    <Link to="/review" className="activeColor"><FontAwesomeIcon icon={faInbox} /> Review</Link> <br /> <br />
                 </div>
             }
             {
                 isAdmin && <div>
-                    <Link to="adminServiceList"><FontAwesomeIcon icon={faLuggageCart} /> Service List</Link> <br /> <br />
-                    <Link to="addService"><FontAwesomeIcon icon={faPlus} /> Add Service</Link> <br /> <br />
-                    <Link to="makeAdmin"><FontAwesomeIcon icon={faUserPlus} /> Make Admin</Link>
+                    <Link to="adminServiceList" className="activeColor"><FontAwesomeIcon icon={faLuggageCart} /> Service List</Link> <br /> <br />
+                    <Link to="addService" className="activeColor"><FontAwesomeIcon icon={faPlus} /> Add Service</Link> <br /> <br />
+                    <Link to="makeAdmin" className="activeColor"><FontAwesomeIcon icon={faUserPlus} /> Make Admin</Link>
                 </div>
             }
         </Container>

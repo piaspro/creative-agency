@@ -8,7 +8,7 @@ import './MakeAdmin.css'
 
 const MakeAdmin = () => {
     const [admin, setAdmin] = useState({});
-    console.log(admin)
+    // capture admin email
     const handleBlur = e => {
         const newInfo = { ...admin };
         newInfo[e.target.name] = e.target.value;

@@ -1,5 +1,12 @@
 
-.sidebar a {
-    color: rgb(44, 190, 44) !important;
+.activeColor {
+    color: gray;
     font-weight: 500;
+}
+.activeColor:active {
+    color: rgb(41, 204, 19);
+}
+.activeColor:hover {
+    text-decoration: none;
+    color: rgb(41, 204, 19);
 }

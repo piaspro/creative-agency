@@ -11,6 +11,7 @@ const AddReview = () => {
     const [loggedInUser, SetLoggedInUser] = useContext(userContext);
     const [clientInfo, setClientInfo] = useState({});
     const { name, photo } = loggedInUser;
+    // Capture data from the form
     const handleBlur = e => {
         const newInfo = { ...clientInfo, name, photo };
         newInfo[e.target.name] = e.target.value;

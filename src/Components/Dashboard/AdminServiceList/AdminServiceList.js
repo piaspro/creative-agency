@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import Table from 'react-bootstrap/Table'
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import loading from '../../../images/Loading.gif'
-
-
+// Options for project status
 const options = [
     { value: 'Pending', label: 'Pending' },
     { value: 'Ongoing', label: 'Ongoing' },
     { value: 'Done', label: 'Done' }
 ];
-
+    
 const AdminServiceList = () => {
     const [allServices, setAllServices] = useState([]);
     // Display all Services
@@ -21,6 +21,7 @@ const AdminServiceList = () => {
     // Change status
     const changeOption = (event, id) => {
         const status = { project: event.value };
+
         fetch(`http://localhost:5000/update/${id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
@@ -35,7 +36,7 @@ const AdminServiceList = () => {
         <div>
             <h4>Service List</h4>
             <div className="card p-2 mr-2">
-                <table className="table table-borderless">
+                <Table responsive>
                     <thead>
                         <tr>
                             <th className="text-secondary text-left" scope="col">Name</th>
@@ -62,7 +63,7 @@ const AdminServiceList = () => {
                             )
                         }
                     </tbody>
-                </table>
+                </Table>
             </div>
         </div>
     );

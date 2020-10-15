@@ -5,12 +5,12 @@ import Header from '../../Header/Header';
 import Sidebar from '../Sidebar/Sidebar';
 
 const AddService = () => {
+    // use history to redirect 
+    const history = useHistory();
+    // capture data from form 
     const [info, setInfo] = useState({});
     const [file, setFile] = useState(null);
-
-
-    const history = useHistory();
-
+    // add service for user
     const addService = (event) => {
         const formData = new FormData()
         formData.append('file', file);
