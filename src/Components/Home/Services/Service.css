@@ -1,6 +1,7 @@
 .service-info{
     border-radius: 5px;
     box-shadow: 1px 5px 10px gray;
+    transition: transform 0.8s ease;
     cursor: pointer;
     margin-top: 50px;
 }
@@ -12,4 +13,7 @@
 }
 .services-title h2{
     font-weight: bold;
+}
+.service-info:hover{
+    transform: scale(1.05);
 }

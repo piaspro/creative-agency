@@ -2,13 +2,13 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { userContext } from '../../../App';
+import loading from '../../../images/Loading.gif'
 import './Service.css'
 
 
 const Services = () => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
     const [services, setServices] = useState([]);
-    console.log(services)
     // Display all Services
     useEffect(() => {
         fetch('http://localhost:5000/getServices')
@@ -27,6 +27,9 @@ const Services = () => {
             </div>
             <div className="mt-3">
                 <Row>
+                    {
+                        services.length === 0 && <Col className="d-flex justify-content-center"> <div><img src={loading} alt="" /></div> </Col>
+                    }
                     {
                         services.map(data => <Col>
                             <div className="p-3 service-info">

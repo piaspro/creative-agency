@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
+import loading from '../../../images/Loading.gif'
 
 
 
@@ -19,6 +20,9 @@ const ClientsFeedback = () => {
             </div>
             <div className="mt-3">
                 <Row>
+                    {
+                        reviews.length === 0 && <Col className="d-flex justify-content-center"> <div><img src={loading} alt="" /></div> </Col>
+                    }
                     {
                         reviews.map(review => <Col>
                             <div className="p-3 service-info">

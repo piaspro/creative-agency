@@ -46,7 +46,8 @@ const Order = () => {
     }
     return (
         <div>
-            <h4>Order</h4>
+            <h4 className="ml-3">Order</h4>
+            <Col md={8}className="card p-3 mr-2">
             <Form onSubmit={sendData}>
                 <Form.Group controlId="exampleForm.ControlInput1">
                     <Form.Control onBlur={handleBlur} type="text" name="name" placeholder="Your Name" value={loggedInUser.name} />
@@ -72,6 +73,7 @@ const Order = () => {
                 </Row>
                 <Button className="px-3 mr-5" variant="dark" type="submit">Send</Button>
             </Form>
+            </Col>
         </div>
     );
 };

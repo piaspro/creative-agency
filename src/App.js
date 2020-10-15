@@ -14,7 +14,6 @@ import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
 import ServiceList from './Components/Dashboard/ServiceList/ServiceList';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
-import Order from './Components/Dashboard/Order/Order';
 
 // export data
 export const userContext = createContext();
@@ -31,24 +30,24 @@ function App() {
         <PrivateRoute path="/dashboard">
           <Dashboard/>
         </PrivateRoute>
-        <Route path="/order">
+        <PrivateRoute path="/order">
           <Dashboard/>
-        </Route>
-        <Route path="/servicelist">
+        </PrivateRoute>
+        <PrivateRoute path="/servicelist">
           <ServiceList/>
-        </Route>
-        <Route path="/review">
+        </PrivateRoute>
+        <PrivateRoute path="/review">
           <AddReview/>
-        </Route>
-        <Route path="/adminServiceList">
-          <AdminServiceList/>
-        </Route>
-        <Route path="/addService">
+        </PrivateRoute>
+        <PrivateRoute path="/adminServiceList">
+          <Dashboard/>
+        </PrivateRoute>
+        <PrivateRoute path="/addService">
           <AddService/>
-        </Route>
-        <Route path="/makeAdmin">
+        </PrivateRoute>
+        <PrivateRoute path="/makeAdmin">
           <MakeAdmin/>
-        </Route>
+        </PrivateRoute>
         <Route path="/login">
           <Login/>
         </Route>

@@ -43,19 +43,21 @@ const AddReview = () => {
                     <Sidebar></Sidebar>
                 </Col>
                 <Col md={8}>
-                    <h4>Add Review</h4>
-                    <Form onSubmit={sendReview}>
-                        <Form.Group controlId="exampleForm.ControlInput1">
-                            <Form.Control onBlur={handleBlur} type="text" name="name" placeholder="Your Name" value={name} />
-                        </Form.Group>
-                        <Form.Group controlId="exampleForm.ControlInput1">
-                            <Form.Control onBlur={handleBlur} type="text" name="position" placeholder="Your Company" />
-                        </Form.Group>
-                        <Form.Group controlId="exampleForm.ControlTextarea1">
-                            <Form.Control onBlur={handleBlur} type="text" as="textarea" name="description" rows="3" placeholder="Project Details" />
-                        </Form.Group>
-                        <Button variant="dark" type="submit">Dark</Button>
-                    </Form>
+                    <h4 className="ml-3">Add Review</h4>
+                    <Col md={8} className="card p-3">
+                        <Form onSubmit={sendReview}>
+                            <Form.Group controlId="exampleForm.ControlInput1">
+                                <Form.Control onBlur={handleBlur} type="text" name="name" placeholder="Your Name" value={name} />
+                            </Form.Group>
+                            <Form.Group controlId="exampleForm.ControlInput1">
+                                <Form.Control onBlur={handleBlur} type="text" name="position" placeholder="Your Company" />
+                            </Form.Group>
+                            <Form.Group controlId="exampleForm.ControlTextarea1">
+                                <Form.Control onBlur={handleBlur} type="text" as="textarea" name="description" rows="3" placeholder="Project Details" />
+                            </Form.Group>
+                            <Button variant="dark" type="submit">Submit</Button>
+                        </Form>
+                    </Col>
                 </Col>
             </Row>
         </div>

@@ -4,6 +4,7 @@ import Header from '../../Header/Header';
 import Sidebar from '../Sidebar/Sidebar';
 import { Button } from 'react-bootstrap';
 import { userContext } from '../../../App';
+import loading from '../../../images/Loading.gif'
 import './Servicelist.css'
 
 const ServiceList = () => {
@@ -27,15 +28,18 @@ const ServiceList = () => {
     }, [])
 
     return (
-        <div>
+        <div className="mx-3">
             <Header></Header>
             <Row>
                 <Col md={4}>
                     <Sidebar></Sidebar>
                 </Col>
                 <Col md={8}>
-                    <h4>Service List</h4>
+                    <h4 className="ml-3">Service List</h4>
                     <Row>
+                        {
+                            service.length === 0 && <Col className="d-flex justify-content-center"> <div><img src={loading} alt="" /></div> </Col>
+                        }
                         {
                             service.map(data => <Col className="m-3 p-3 box">
                                 <Row>

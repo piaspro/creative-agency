@@ -48,26 +48,28 @@ const AddService = () => {
                 </Col>
                 <Col md={8}>
                     <h4>Add Service</h4>
-                    <Form onSubmit={addService}>
-                        <Row>
-                            <Col>
-                                <Form.Group controlId="exampleForm.ControlInput1">
-                                    <Form.Label>Service Title</Form.Label>
-                                    <Form.Control onBlur={handleBlur} type="text" name="title" placeholder="Enter Title" />
-                                </Form.Group>
-                                <Form.Group controlId="exampleForm.ControlTextarea1">
-                                    <Form.Label>Description</Form.Label>
-                                    <Form.Control onBlur={handleBlur} type="text" as="textarea" rows="3" name="description" placeholder="Enter Description" />
-                                </Form.Group>
-                            </Col>
-                            <Col>
-                                <Form.Group>
-                                    <Form.File onChange={handleFileChange} label="Icon" />
-                                </Form.Group>
-                            </Col>
-                        </Row>
+                    <Col md={8}>
+                        <Form onSubmit={addService}>
+                            <Row className="card p-3">
+                                <Col>
+                                    <Form.Group controlId="exampleForm.ControlInput1">
+                                        <Form.Label>Service Title</Form.Label>
+                                        <Form.Control onBlur={handleBlur} type="text" name="title" placeholder="Enter Title" />
+                                    </Form.Group>
+                                    <Form.Group controlId="exampleForm.ControlTextarea1">
+                                        <Form.Label>Description</Form.Label>
+                                        <Form.Control onBlur={handleBlur} type="text" as="textarea" rows="3" name="description" placeholder="Enter Description" />
+                                    </Form.Group>
+                                </Col>
+                                <Col>
+                                    <Form.Group>
+                                        <Form.File onChange={handleFileChange} label="Icon" />
+                                    </Form.Group>
+                                </Col>
+                            </Row> <br />
                             <Button className="px-3 mr-5" variant="dark" type="submit">Send</Button>
-                    </Form>
+                        </Form>
+                    </Col>
                 </Col>
             </Row>
         </div>
