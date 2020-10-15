@@ -10,7 +10,7 @@ const Services = () => {
     const [services, setServices] = useState([]);
     // Display all Services
     useEffect(() => {
-        fetch('http://localhost:5000/getServices')
+        fetch('https://morning-falls-52247.herokuapp.com/getServices')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])

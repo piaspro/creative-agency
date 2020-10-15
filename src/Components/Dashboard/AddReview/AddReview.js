@@ -20,7 +20,7 @@ const AddReview = () => {
     let history = useHistory();
     // function to send data to server
     const sendReview = (event) => {
-        fetch('http://localhost:5000/addReview', {
+        fetch('https://morning-falls-52247.herokuapp.com/addReview', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(clientInfo)

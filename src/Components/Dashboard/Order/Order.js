@@ -20,7 +20,7 @@ const Order = () => {
         formData.append('title', loggedInUser.title);
         formData.append('price', info.price);
         formData.append('description', info.description);
-        fetch('http://localhost:5000/addOrder', {
+        fetch('https://morning-falls-52247.herokuapp.com/addOrder', {
             method: 'POST',
             body: formData
         })

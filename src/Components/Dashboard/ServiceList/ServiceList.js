@@ -12,7 +12,7 @@ const ServiceList = () => {
     const [service, setService] = useState([]);
     // Display all Servicelist
     useEffect(() => {
-        fetch('http://localhost:5000/getUserServices?email=' + loggedInUser.email, {
+        fetch('https://morning-falls-52247.herokuapp.com/getUserServices?email=' + loggedInUser.email, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

@@ -6,7 +6,7 @@ const ClientsFeedback = () => {
     const [reviews, setReviews] = useState([]);
     // Display all review
     useEffect(() => {
-        fetch('http://localhost:5000/getReview')
+        fetch('https://morning-falls-52247.herokuapp.com/getReview')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])

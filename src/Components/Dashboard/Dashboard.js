@@ -23,7 +23,7 @@ const Dashboard = () => {
     const [isUser, setIsUser] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/isAdmin', {
+        fetch('https://morning-falls-52247.herokuapp.com/isAdmin', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })
@@ -33,7 +33,7 @@ const Dashboard = () => {
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:5000/isUser', {
+        fetch('https://morning-falls-52247.herokuapp.com/isUser', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })

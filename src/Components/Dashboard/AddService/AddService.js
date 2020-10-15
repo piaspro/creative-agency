@@ -16,7 +16,7 @@ const AddService = () => {
         formData.append('file', file);
         formData.append('title', info.title);
         formData.append('description', info.description);
-        fetch('http://localhost:5000/AddService', {
+        fetch('https://morning-falls-52247.herokuapp.com/AddService', {
             method: 'POST',
             body: formData
         })

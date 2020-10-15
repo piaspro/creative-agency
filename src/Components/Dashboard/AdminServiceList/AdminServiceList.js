@@ -9,12 +9,12 @@ const options = [
     { value: 'Ongoing', label: 'Ongoing' },
     { value: 'Done', label: 'Done' }
 ];
-    
+
 const AdminServiceList = () => {
     const [allServices, setAllServices] = useState([]);
     // Display all Services
     useEffect(() => {
-        fetch('http://localhost:5000/getAllServices')
+        fetch('https://morning-falls-52247.herokuapp.com/getAllServices')
             .then(res => res.json())
             .then(data => setAllServices(data))
     }, [])
@@ -22,7 +22,7 @@ const AdminServiceList = () => {
     const changeOption = (event, id) => {
         const status = { project: event.value };
 
-        fetch(`http://localhost:5000/update/${id}`, {
+        fetch(`https://morning-falls-52247.herokuapp.com/update/${id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(status)
