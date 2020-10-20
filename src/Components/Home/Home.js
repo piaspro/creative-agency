@@ -12,6 +12,7 @@ import Services from './Services/Services';
 import OurWorks from './OurWorks/OurWorks';
 import ClientsFeedback from './ClientsFeedback/ClientsFeedback';
 import Footer from './Footer/Footer';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
@@ -24,7 +25,7 @@ const Home = () => {
                             <div className="p-5 info-text">
                                 <h1> Let's Grow Your <br /> Brand To The <br /> Next Level</h1>
                                 <p> Lorem, ipsum dolor sit amet consectetur <br /> adipisicing elit. Est, voluptatibus, repudiandae <br /> sequi voluptate sunt accusamus totam </p>
-                                <Button variant="dark">Hire Us</Button>
+                                <Link to="/dashboard"><Button variant="dark">Hire Us</Button></Link>
                             </div>
                         </Col>
                         <Col md={6}>

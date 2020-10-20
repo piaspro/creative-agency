@@ -40,7 +40,7 @@ const Header = () => {
                         <Link className="mr-5 text" to="/dashboard">Contact Us</Link>
                         {loggedInUser.isSignedIn ?
                             <Button className="px-3 mr-5" variant="danger" onClick={handleSignOut} >Log Out</Button>
-                            : <Link to="/login"><Button className="px-3 mr-5" variant="dark">Log In</Button></Link>
+                            : <Link to="/dashboard"><Button className="px-3 mr-5" variant="dark">Log In</Button></Link>
                         }
                     </Nav>
                 </Navbar.Collapse>

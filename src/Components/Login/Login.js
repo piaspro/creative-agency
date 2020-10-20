@@ -35,7 +35,7 @@ const Login = () => {
                     email: email,
                     photo: photoURL
                 };
-                const userInfo = { ...loggedInUser, ...signedInUser }
+                const userInfo = { ...signedInUser }
                 setLoggedInUser(userInfo);
                 setUser(userInfo);
                 storeAuthToken()

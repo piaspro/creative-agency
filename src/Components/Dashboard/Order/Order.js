@@ -1,13 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { Button, Col, Form, Row } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
-import { userContext } from '../../../App';
+import { userContext, userData } from '../../../App';
 
 const Order = () => {
     // use history to redirect
     const history = useHistory();
     // dynamic data handler use context
     const [loggedInUser, SetLoggedInUser] = useContext(userContext);
+    const [userServices, setUserServices] = useContext(userData);
     // capture data from form
     const [info, setInfo] = useState({});
     const [file, setFile] = useState(null);
@@ -17,7 +18,7 @@ const Order = () => {
         formData.append('file', file);
         formData.append('name', loggedInUser.name);
         formData.append('email', loggedInUser.email);
-        formData.append('title', loggedInUser.title);
+        formData.append('title', info.title);
         formData.append('price', info.price);
         formData.append('description', info.description);
         fetch('https://morning-falls-52247.herokuapp.com/addOrder', {
@@ -57,14 +58,14 @@ const Order = () => {
                         <Form.Control onBlur={handleBlur} type="email" name="email" placeholder="Your Email" value={loggedInUser.email} />
                     </Form.Group>
                     <Form.Group controlId="exampleForm.ControlInput1">
-                        <Form.Control onBlur={handleBlur} type="text" name="title" placeholder="Graphics Design" value={loggedInUser.title} />
+                        <Form.Control onBlur={handleBlur} type="text" name="title" placeholder="Please Select a Service" value={userServices.title} />
                     </Form.Group>
                     <Form.Group controlId="exampleForm.ControlTextarea1">
-                        <Form.Control onBlur={handleBlur} as="textarea" rows="3" name="description" placeholder="Project Details" />
+                        <Form.Control onBlur={handleBlur} as="textarea" rows="3" name="description" placeholder="Project Details" value={userServices.description}/>
                     </Form.Group>
                     <Row>
                         <Col>
-                            <Form.Control onBlur={handleBlur} placeholder="Price" type="text" name="price" />
+                            <Form.Control onBlur={handleBlur} placeholder="Price" type="text" name="price" value="99$"/>
                         </Col>
                         <Col>
                             <Form.Group>

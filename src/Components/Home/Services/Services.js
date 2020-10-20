@@ -1,12 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { userContext } from '../../../App';
+import { userData } from '../../../App';
 import loading from '../../../images/Loading.gif'
 import './Service.css'
 
 const Services = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(userContext);
+    // dynamic data handler use context
+    const [userServices, setUserServices] = useContext(userData);
     const [services, setServices] = useState([]);
     // Display all Services
     useEffect(() => {
@@ -14,8 +15,9 @@ const Services = () => {
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
+
     const handleInfo = (data) => {
-        setLoggedInUser(data)
+        setUserServices(data)
     }
 
     return (
@@ -32,7 +34,7 @@ const Services = () => {
                         services.map(data => <Col>
                             <div className="p-3 service-info">
                                 <div className="text-center">
-                                    <Link to="/dashboard" onClick={() => handleInfo(data)}><img height={120} className="p-3 mr-1" src={`data:image/png;base64,${data.image.img}`} alt="..." /></Link>
+                                    <Link to="/dashboard" onClick={() => {handleInfo(data)}}><img height={120} className="p-3 mr-1" src={`data:image/png;base64,${data.image.img}`} alt="..." /></Link>
                                 </div>
                                 <div className="text-center p-3">
                                     <h5>{data.title}</h5>
