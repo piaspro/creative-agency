@@ -1,11 +1,11 @@
 ### `Creative Agency`
 ### `A Full Stack React App`
 
-Technology Used: ### `React.js` ### `Bootstrap` ### `Node.js` ### `express.js` ### `MongoDb` 
+Technology Used:- `React.js`  `Bootstrap`  `Node.js`  `express.js`  `MongoDb` 
 
-•	A Full Stack Service Provider app
-•	User Purchase services, See their services in the dashboard & give feedback.
-•	An admin have control over all using dashboard.
+-•	A Full Stack Service Provider app
+-•	User Purchase services, See their services in the dashboard & give feedback.
+-•	An admin have control over all using dashboard.
 
 
 ### Languages and Tools:
